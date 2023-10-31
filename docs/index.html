@@ -31,29 +31,31 @@
       filter: hue-rotate(30deg); /* Apply a gold-tinted hue rotation on hover */
     }
 
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Prevent sparkles from affecting hover on the image */
+    }
+
     .sparkle {
       content: "";
       position: absolute;
-      width: 100%; /* Cover the entire width of the image */
-      height: 100%; /* Cover the entire height of the image */
+      width: 2px; /* Adjust the size of sparkles */
+      height: 2px; /* Adjust the size of sparkles */
       background: #FFD700; /* Gold color for sparkles */
-      top: 0;
-      left: 0;
-      animation: sparkle 3s infinite; /* Adjust animation duration */
-      z-index: 2; /* Ensure it appears in front of the image */
+      border-radius: 50%; /* Make sparkles circular */
+      animation: sparkle 3s infinite;
     }
 
     @keyframes sparkle {
-      0% {
-        transform: translate(0, 0);
+      0%, 100% {
         opacity: 0;
       }
       50% {
         opacity: 1;
-      }
-      100% {
-        transform: translate(2px, -2px); /* Adjust the sparkle movement */
-        opacity: 0;
       }
     }
 
@@ -110,7 +112,12 @@
 
   <div class="image-container">
     <img src="https://thewildcattribune.com/wp-content/uploads/2022/04/dune.jpg" alt="Dune Image">
-    <span class="sparkle"></span>
+    <div class="sparkles">
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <!-- Add more sparkles as needed -->
+    </div>
   </div>
 
   <a href="https://www.linkedin.com/in/nathannlynch">LinkedIn Profile</a>
