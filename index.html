@@ -31,11 +31,22 @@
   <img src="https://thewildcattribune.com/wp-content/uploads/2022/04/dune.jpg" alt="Dune Image">
   
   <script>
-    document.querySelector('img').addEventListener('click', function() {
-      // Change the background color to Mars-like red (#FF5733)
+  let isMarsMode = false; // Initialize a variable to track the mode
+
+  document.querySelector('img').addEventListener('click', function() {
+    if (isMarsMode) {
+      // Change the background color back to the original color
+      document.body.style.backgroundColor = '#E5CBA3'; /* Dune movie color */
+    } else {
+      // Change the background color to Mars-like red
       document.body.style.backgroundColor = '#FF5733';
-    });
-  </script>
+    }
+
+    // Toggle the mode
+    isMarsMode = !isMarsMode;
+  });
+</script>
+
 
   <footer>
     &copy; 2023 Your Name
