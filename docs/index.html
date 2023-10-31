@@ -28,11 +28,23 @@
 
     /* Navigation Bar Styles */
     .navbar {
-      background-color: #292929; /* Dark background color for the navbar */
+      background: #292929; /* Dark background color for the navbar */
       display: flex;
-      justify-content: space-around;
-      padding: 15px 0;
+      justify-content: space-between;
+      padding: 5px 0;
       border-radius: 20px; /* Rounded shape */
+      position: relative; /* For positioning the flattened cylinder effect */
+      z-index: 1; /* Ensure the navbar is above the content */
+    }
+
+    .navbar::before {
+      content: "";
+      background: linear-gradient(to left, #292929, transparent); /* Asymmetrical effect */
+      width: 50%; /* Adjust to control the asymmetry */
+      height: 100%;
+      position: absolute;
+      right: 0;
+      border-radius: 20px 0 0 20px; /* Rounded on the left, flat on the right */
     }
 
     .navbar a {
@@ -40,7 +52,7 @@
       text-decoration: none;
       font-size: 16px;
       padding: 10px 20px;
-      border-radius: 20px; /* Rounded shape for links */
+      border-radius: 0; /* Reset the link's border radius */
       transition: background-color 0.3s;
     }
 
