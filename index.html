@@ -5,6 +5,10 @@
   <title>My Dune</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
+    .mars-mode {
+      background-color: #FF5733; /* Mars-like red */
+    }
+    
     body {
       background-color: #E5CBA3; /* Dune movie color */
       font-family: 'Playfair Display', serif; /* Use Playfair Display font */
@@ -31,21 +35,22 @@
   <img src="https://thewildcattribune.com/wp-content/uploads/2022/04/dune.jpg" alt="Dune Image">
   
   <script>
-  let isMarsMode = false; // Initialize a variable to track the mode
+    let isMarsMode = false; // Initialize a variable to track the mode
 
-  document.querySelector('img').addEventListener('click', function() {
-    if (isMarsMode) {
-      // Change the background color back to the original color
-      document.body.style.backgroundColor = '#E5CBA3'; /* Dune movie color */
-    } else {
-      // Change the background color to Mars-like red
-      document.body.style.backgroundColor = '#FF5733';
-    }
+    document.querySelector('img').addEventListener('click', function() {
+      const body = document.body;
+      if (isMarsMode) {
+        // Change to the original mode
+        body.classList.remove('mars-mode');
+      } else {
+        // Change to Mars mode
+        body.classList.add('mars-mode');
+      }
 
-    // Toggle the mode
-    isMarsMode = !isMarsMode;
-  });
-</script>
+      // Toggle the mode
+      isMarsMode = !isMarsMode;
+    });
+  </script>
 
 
   <footer>
