@@ -33,18 +33,6 @@
       justify-content: space-between;
       padding: 5px 0;
       border-radius: 20px; /* Rounded shape */
-      position: relative; /* For positioning the flattened cylinder effect */
-      z-index: 1; /* Ensure the navbar is above the content */
-    }
-
-    .navbar::before {
-      content: "";
-      background: linear-gradient(to left, #292929, transparent); /* Asymmetrical effect */
-      width: 50%; /* Adjust to control the asymmetry */
-      height: 100%;
-      position: absolute;
-      right: 0;
-      border-radius: 20px 0 0 20px; /* Rounded on the left, flat on the right */
     }
 
     .navbar a {
@@ -52,13 +40,25 @@
       text-decoration: none;
       font-size: 16px;
       padding: 10px 20px;
-      border-radius: 0; /* Reset the link's border radius */
-      transition: background-color 0.3s;
+      border-radius: 20px; /* Rounded shape for links */
+      transition: background 0.3s; /* Smooth background transition */
     }
 
     .navbar a:hover {
-      background-color: #FFA500; /* Hover background color for links */
+      background: linear-gradient(to right, #3399FF, #0000FF, #3399FF); /* Shimmering electric blue effect */
+      background-size: 200% 100%;
+      background-position: 200% 0;
+      animation: shimmer 2s linear infinite; /* Shimmering animation */
       color: #292929; /* Hover text color */
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
     }
   </style>
 </head>
