@@ -8,11 +8,12 @@
     .mars-mode {
       background-color: #FF5733; /* Mars-like red */
     }
-    
+
     body {
       background-color: #E5CBA3; /* Dune movie color */
       font-family: 'Playfair Display', serif; /* Use Playfair Display font */
       color: #333;
+      margin: 0; /* Remove default margin for spacing */
     }
 
     img {
@@ -24,9 +25,38 @@
       text-decoration: none;
       color: #FFA500; /* Dune movie color */
     }
+
+    /* Navigation Bar Styles */
+    .navbar {
+      background-color: #292929; /* Dark background color for the navbar */
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      border-radius: 20px; /* Rounded shape */
+    }
+
+    .navbar a {
+      color: #D3D3D3; /* Light text color for links */
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 20px; /* Rounded shape for links */
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #FFA500; /* Hover background color for links */
+      color: #292929; /* Hover text color */
+    }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="resources.html">Resources</a>
+  </div>
+
   <h1>Welcome</h1>
   <p>Beginnings are such delicate times.</p>
   
@@ -51,7 +81,6 @@
       isMarsMode = !isMarsMode;
     });
   </script>
-
 
   <footer>
     &copy; 2023 Nate
