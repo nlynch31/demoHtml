@@ -16,6 +16,11 @@
       margin: 0; /* Remove default margin for spacing */
     }
 
+    .image-container {
+      position: relative;
+      max-width: 100%;
+    }
+
     img {
       max-width: 100%;
       cursor: pointer; /* Change the cursor to a pointer when hovering over the image */
@@ -24,6 +29,31 @@
 
     img:hover {
       filter: hue-rotate(30deg); /* Apply a gold-tinted hue rotation on hover */
+    }
+
+    .sparkle {
+      content: "";
+      position: absolute;
+      width: 2px; /* Adjust the size of sparkles */
+      height: 2px; /* Adjust the size of sparkles */
+      background: #FFD700; /* Gold color for sparkles */
+      top: 0;
+      left: 0;
+      animation: sparkle 3s infinite; /* Adjust animation duration */
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(2px, -2px); /* Adjust the sparkle movement */
+        opacity: 0;
+      }
     }
 
     a {
@@ -76,11 +106,14 @@
 
   <h1>Welcome</h1>
   <p>Beginnings are such delicate times.</p>
-  
+
+  <div class="image-container">
+    <img src="https://thewildcattribune.com/wp-content/uploads/2022/04/dune.jpg" alt="Dune Image">
+    <span class="sparkle"></span>
+  </div>
+
   <a href="https://www.linkedin.com/in/nathannlynch">LinkedIn Profile</a>
-  
-  <img src="https://thewildcattribune.com/wp-content/uploads/2022/04/dune.jpg" alt="Dune Image">
-  
+
   <script>
     let isMarsMode = false; // Initialize a variable to track the mode
 
