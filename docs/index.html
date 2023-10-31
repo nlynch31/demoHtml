@@ -19,6 +19,11 @@
     img {
       max-width: 100%;
       cursor: pointer; /* Change the cursor to a pointer when hovering over the image */
+      transition: filter 0.3s; /* Smooth transition for the sparkle effect */
+    }
+
+    img:hover {
+      filter: hue-rotate(30deg); /* Apply a gold-tinted hue rotation on hover */
     }
 
     a {
